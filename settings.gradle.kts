@@ -12,4 +12,5 @@ plugins {
 }
 
 rootProject.name = "generic-kotlin-template"
-include("app")
+include("backend")
+include("frontend")
