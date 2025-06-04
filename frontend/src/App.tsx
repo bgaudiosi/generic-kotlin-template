@@ -23,7 +23,7 @@ function App() {
         setLoading(false);
       })
       .catch(error => {
-        setError('Failed to fetch message from backend');
+        setError('Failed to fetch message from app');
         setLoading(false);
         console.error('Error:', error);
       });
@@ -37,7 +37,7 @@ function App() {
       </header>
       
       <main>
-        <h2>Message from Backend:</h2>
+        <h2>Message from App:</h2>
         {loading && <p className="message loading">Loading...</p>}
         {error && <p className="message error">{error}</p>}
         {message && !loading && !error && (

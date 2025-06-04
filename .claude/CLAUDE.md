@@ -9,7 +9,7 @@ This is a generic Spring Boot Kotlin & React template repository designed to ser
 ```
 generic-kotlin-template/
 ├── .claude/                    # Claude AI context files
-├── backend/                    # Spring Boot Kotlin API
+├── app/                        # Spring Boot Kotlin API
 │   ├── src/main/kotlin/        # Kotlin source code
 │   │   └── org/example/        # Package structure
 │   │       ├── Application.kt  # Spring Boot main class
@@ -17,7 +17,7 @@ generic-kotlin-template/
 │   ├── src/main/resources/     # Application resources
 │   │   └── application.properties
 │   ├── src/test/kotlin/        # Kotlin test code
-│   └── build.gradle.kts        # Backend module build configuration
+│   └── build.gradle.kts        # App module build configuration
 ├── frontend/                   # React TypeScript frontend
 │   ├── src/                    # React source code
 │   │   ├── App.tsx            # Main React component
@@ -47,7 +47,7 @@ generic-kotlin-template/
 - **Code Quality**: Spotless with ktlint formatting
 
 ### Target Stack (✅ Implemented)
-- **Backend**: Spring Boot 3.2.5 with Kotlin ✅
+- **App**: Spring Boot 3.2.5 with Kotlin ✅
 - **Frontend**: React 18.3.1 with TypeScript ✅
 - **Build Tool**: Gradle with Kotlin DSL ✅
 - **Package Manager**: npm for frontend dependencies ✅
@@ -78,7 +78,7 @@ generic-kotlin-template/
 ## Current Implementation
 The project is now a fully functional multimodule Spring Boot Kotlin + React TypeScript template:
 
-### Backend Module
+### App Module
 - **Spring Boot Application**: Main application class with embedded Tomcat
 - **REST API**: `/api/hello` endpoint returning JSON response
 - **Testing**: Controller tests using MockMvc and Spring Boot Test
@@ -86,16 +86,16 @@ The project is now a fully functional multimodule Spring Boot Kotlin + React Typ
 
 ### Frontend Module  
 - **React Application**: TypeScript-based React app
-- **API Integration**: Fetches data from backend `/api/hello` endpoint
+- **API Integration**: Fetches data from app `/api/hello` endpoint
 - **Styling**: Clean, responsive CSS with loading and error states
 - **Development**: Integrated with Gradle build system
-- **Proxy Configuration**: Development proxy to backend server
+- **Proxy Configuration**: Development proxy to app server
 
 ### Build System
-- **Multimodule Gradle**: Root project coordinates backend and frontend builds
+- **Multimodule Gradle**: Root project coordinates app and frontend builds
 - **Unified Tasks**: `buildAll`, `testAll`, and `startDev` tasks for full-stack development
 - **Code Quality**: Spotless formatting for Kotlin code
-- **Development Workflow**: Separate dev servers for frontend and backend
+- **Development Workflow**: Separate dev servers for frontend and app
 
 ## Next Steps for Template Development
 The template is now complete with the following features:
@@ -109,10 +109,10 @@ The template is now complete with the following features:
 ## Usage Instructions
 
 ### Development
-Start backend and frontend separately for development:
+Start app and frontend separately for development:
 ```bash
-# Terminal 1 - Start backend (http://localhost:8080)
-./gradlew :backend:bootRun
+# Terminal 1 - Start app (http://localhost:8080)
+./gradlew :app:bootRun
 
 # Terminal 2 - Start frontend (http://localhost:3000)  
 ./gradlew :frontend:startDev

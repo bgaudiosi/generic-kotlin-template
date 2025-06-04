@@ -6,7 +6,7 @@ A multimodule Spring Boot Kotlin + React TypeScript template repository for quic
 
 ```
 generic-kotlin-template/
-├── backend/                    # Spring Boot Kotlin API
+├── app/                        # Spring Boot Kotlin API
 │   ├── src/main/kotlin/        # Kotlin source code
 │   │   └── org/example/        # Package structure
 │   │       ├── Application.kt  # Spring Boot main class
@@ -14,7 +14,7 @@ generic-kotlin-template/
 │   ├── src/main/resources/     # Application resources
 │   │   └── application.properties
 │   ├── src/test/kotlin/        # Kotlin test code
-│   └── build.gradle.kts        # Backend module build configuration
+│   └── build.gradle.kts        # App module build configuration
 ├── frontend/                   # React TypeScript frontend
 │   ├── src/                    # React source code
 │   │   ├── App.tsx            # Main React component
@@ -34,7 +34,7 @@ generic-kotlin-template/
 
 ## Technology Stack
 
-- **Backend**: Spring Boot 3.2.5 with Kotlin 2.0.20
+- **App**: Spring Boot 3.2.5 with Kotlin 2.0.20
 - **Frontend**: React 18.3.1 with TypeScript
 - **Build Tool**: Gradle 8.11.1 with Kotlin DSL
 - **Java**: 21 (toolchain)
@@ -56,11 +56,11 @@ generic-kotlin-template/
    cd generic-kotlin-template
    ```
 
-2. **Start backend (Terminal 1):**
+2. **Start app (Terminal 1):**
    ```bash
-   ./gradlew :backend:bootRun
+   ./gradlew :app:bootRun
    ```
-   Backend will be available at http://localhost:8080
+   App will be available at http://localhost:8080
 
 3. **Start frontend (Terminal 2):**
    ```bash
@@ -68,12 +68,12 @@ generic-kotlin-template/
    ```
    Frontend will be available at http://localhost:3000
 
-The frontend automatically proxies API calls to the backend during development.
+The frontend automatically proxies API calls to the app during development.
 
 ### Available Endpoints
 
 - **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:8080/api/hello
+- **App API**: http://localhost:8080/api/hello
 
 ### Build Commands
 
@@ -82,23 +82,23 @@ The frontend automatically proxies API calls to the backend during development.
 ./gradlew buildAll
 
 # Build individual modules
-./gradlew :backend:build
+./gradlew :app:build
 ./gradlew :frontend:build
 
 # Run all tests
 ./gradlew testAll
 
 # Run individual tests
-./gradlew :backend:test
+./gradlew :app:test
 ./gradlew :frontend:testFrontend
 
 # Format code
-./gradlew :backend:spotlessApply
+./gradlew :app:spotlessApply
 ```
 
 ## Project Features
 
-### Backend
+### App
 - ✅ Spring Boot with Kotlin
 - ✅ REST API with JSON responses
 - ✅ Application configuration
@@ -107,7 +107,7 @@ The frontend automatically proxies API calls to the backend during development.
 
 ### Frontend
 - ✅ React with TypeScript
-- ✅ API integration with backend
+- ✅ API integration with app
 - ✅ Responsive CSS styling
 - ✅ Error handling and loading states
 - ✅ Development proxy configuration
@@ -124,12 +124,12 @@ The frontend automatically proxies API calls to the backend during development.
 
 ### Package Structure
 1. Update package name from `org.example` in:
-   - `backend/src/main/kotlin/org/example/`
-   - `backend/src/test/kotlin/org/example/`
+   - `app/src/main/kotlin/org/example/`
+   - `app/src/test/kotlin/org/example/`
    - All Kotlin files
 
 ### Application Name
-1. Update `spring.application.name` in `backend/src/main/resources/application.properties`
+1. Update `spring.application.name` in `app/src/main/resources/application.properties`
 2. Update `name` in `frontend/package.json`
 3. Update `rootProject.name` in `settings.gradle.kts`
 
@@ -152,23 +152,23 @@ dependencies {
 
 ## Development Workflow
 
-1. **API Development**: Add endpoints in `backend/src/main/kotlin/org/example/controller/`
+1. **API Development**: Add endpoints in `app/src/main/kotlin/org/example/controller/`
 2. **Frontend Development**: Update `frontend/src/App.tsx` to consume new APIs
 3. **Testing**: Add tests in respective `src/test/` directories
 4. **Building**: Use `./gradlew buildAll` for production builds
 
 ## Production Deployment
 
-The backend can serve the frontend static files. Build steps:
+The app can serve the frontend static files. Build steps:
 
 1. Build frontend: `./gradlew :frontend:build`
-2. Copy frontend build to backend resources (manual step for now)
-3. Build backend: `./gradlew :backend:build`
-4. Deploy the backend JAR file
+2. Copy frontend build to app resources (manual step for now)
+3. Build app: `./gradlew :app:build`
+4. Deploy the app JAR file
 
 ## Contributing
 
-1. Run `./gradlew :backend:spotlessApply` before committing Kotlin code
+1. Run `./gradlew :app:spotlessApply` before committing Kotlin code
 2. Ensure all tests pass: `./gradlew testAll`
 3. Verify builds work: `./gradlew buildAll`
 

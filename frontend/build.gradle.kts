@@ -25,6 +25,14 @@ tasks.register<Exec>("startDev") {
     commandLine("npm", "start")
 }
 
+tasks.register<Exec>("testFrontend") {
+    group = "verification"
+    description = "Run React tests"
+    dependsOn("npmInstall")
+    workingDir = file(".")
+    commandLine("npm", "test", "--", "--watchAll=false")
+}
+
 tasks.register("build") {
     group = "build"
     description = "Build frontend"
