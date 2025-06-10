@@ -43,10 +43,9 @@ liquibase {
         register("main") {
             this.arguments = mapOf(
                 "changelogFile" to "app/src/main/resources/db/changelog/db.changelog-master.yaml",
-                "url" to (project.findProperty("postgres.url") as? String
-                    ?: "jdbc:postgresql://localhost:54320/my_db"),
-                "username" to (project.findProperty("postgres.user") as? String ?: "user"),
-                "password" to (project.findProperty("postgres.password") as? String ?: "pass"),
+                "url" to "jdbc:postgresql://localhost:6666/mydb",
+                "username" to "postgres",
+                "password" to "password",
                 "logLevel" to "info"
             )
         }
