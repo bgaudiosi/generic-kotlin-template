@@ -141,3 +141,7 @@ All dependencies are managed through the version catalog in `gradle/libs.version
 1. Add version to `[versions]` section
 2. Add library reference to `[libraries]` section
 3. Reference using `libs.` prefix in build files
+
+## DB Updates
+Run db updates with this task
+`./gradlew :app:update --no-configuration-cache`

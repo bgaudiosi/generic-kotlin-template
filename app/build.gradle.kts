@@ -24,6 +24,8 @@ dependencies {
     testImplementation(libs.spring.boot.starter.test)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.truth)
+    testImplementation(libs.mockk)
+    testImplementation(libs.springmockk)
 }
 
 java {

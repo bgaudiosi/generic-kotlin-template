@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 01-create-my-resources-table
+      id: 01-create-user-table
       author: system
       changes:
         - createTable:
-            tableName: my_resources
+            tableName: users
             columns:
               - column:
                   name: id
@@ -15,11 +15,11 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: name
-                  type: varchar(255)
+                  type: varchar(50)
                   constraints:
                     nullable: false
               - column:
-                  name: description
-                  type: text
+                  name: age
+                  type: integer
                   constraints:
-                    nullable: true
+                    nullable: false
