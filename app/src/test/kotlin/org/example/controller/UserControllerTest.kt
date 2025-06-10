@@ -1,18 +1,17 @@
 package org.example.controller
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.ninjasquad.springmockk.MockkBean
 import io.mockk.every
 import io.mockk.justRun
+import io.mockk.mockk
 import io.mockk.verify
 import org.example.domain.User
 import org.example.domain.UserId
 import org.example.service.UserCreateRequest
 import org.example.service.UserService
 import org.example.service.UserUpdateRequest
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete
@@ -21,17 +20,19 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+import org.springframework.test.web.servlet.setup.MockMvcBuilders
 
-@WebMvcTest(UserController::class)
 class UserControllerTest {
-    @Autowired
     private lateinit var mockMvc: MockMvc
-
-    @MockkBean
     private lateinit var userService: UserService
-
-    @Autowired
     private lateinit var objectMapper: ObjectMapper
+
+    @BeforeEach
+    fun setUp() {
+        userService = mockk()
+        objectMapper = ObjectMapper()
+        mockMvc = MockMvcBuilders.standaloneSetup(UserController(userService)).build()
+    }
 
     @Test
     fun `should create user successfully`() {
