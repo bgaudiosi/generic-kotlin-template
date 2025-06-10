@@ -9,6 +9,7 @@ kotlin = "2.0.20"
 postgres = "42.7.5"
 picocli = "4.7.5"
 snakeyaml = "1.33"
+exposed = "0.60.0"
 
 [libraries]
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
@@ -20,6 +21,9 @@ liquibase-core = { module = "org.liquibase:liquibase-core", version.ref = "liqui
 postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres" }
 picocli = { module = "info.picocli:picocli", version.ref = "picocli" }
 snakeyaml = { module = "org.yaml:snakeyaml", version.ref = "snakeyaml" }
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-jdbc = { module ="org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+exposed-spring-boot-starter = { module ="org.jetbrains.exposed:exposed-spring-boot-starter", version.ref = "exposed" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

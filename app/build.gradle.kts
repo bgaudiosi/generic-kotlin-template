@@ -15,7 +15,9 @@ dependencies {
     liquibaseRuntime(libs.picocli)
     liquibaseRuntime(libs.snakeyaml)
     liquibaseRuntime(libs.postgresql)
-
+    implementation(libs.exposed.core)
+    implementation(libs.exposed.jdbc)
+    implementation(libs.exposed.spring.boot.starter)
     implementation(libs.spring.boot.starter.web)
     implementation(libs.postgresql)
 
