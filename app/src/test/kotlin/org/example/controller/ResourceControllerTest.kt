@@ -8,8 +8,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
-@WebMvcTest(HelloController::class)
-class HelloControllerTest {
+@WebMvcTest(ResourceController::class)
+class ResourceControllerTest {
     @Autowired
     private lateinit var mockMvc: MockMvc
 

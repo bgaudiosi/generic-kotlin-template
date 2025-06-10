@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/api")
-class HelloController {
+@RequestMapping("/resource")
+class ResourceController {
     @GetMapping("/hello")
     fun hello(): Map<String, String> = mapOf("message" to "Hello World!")
 }
