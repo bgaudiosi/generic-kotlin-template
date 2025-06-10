@@ -1,9 +1,14 @@
 [versions]
 guava = "33.2.1-jre"
+liquibase = "4.25.1"
+liquibase-gradle = "2.2.0"
 junit-jupiter = "5.10.3"
 truth = "1.4.4"
 spring-boot = "3.2.5"
 kotlin = "2.0.20"
+postgres = "42.7.5"
+picocli = "4.7.5"
+snakeyaml = "1.33"
 
 [libraries]
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
@@ -11,6 +16,10 @@ junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "jun
 truth = { module = "com.google.truth:truth", version.ref = "truth" }
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot" }
+liquibase-core = { module = "org.liquibase:liquibase-core", version.ref = "liquibase" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgres" }
+picocli = { module = "info.picocli:picocli", version.ref = "picocli" }
+snakeyaml = { module = "org.yaml:snakeyaml", version.ref = "snakeyaml" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
@@ -18,4 +27,4 @@ kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotl
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
 spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.4" }
 spotless = { id = "com.diffplug.spotless", version = "7.0.0.BETA4"}
-node-gradle = { id = "com.github.node-gradle.node", version = "7.0.2" }
+liquibase-gradle-plugin = { id = "org.liquibase.gradle", version.ref = "liquibase-gradle" }
