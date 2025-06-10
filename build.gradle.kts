@@ -9,33 +9,18 @@ allprojects {
 
 // Configure Spotless for all Kotlin projects
 subprojects {
-    if (name == "app") {
-        apply(plugin = "com.diffplug.spotless")
+    apply(plugin = "com.diffplug.spotless")
         
-        configure<com.diffplug.gradle.spotless.SpotlessExtension> {
-            kotlin {
-                ktlint()
-            }
-            kotlinGradle {
-                target("*.gradle.kts")
-                ktlint()
-            }
+    configure<com.diffplug.gradle.spotless.SpotlessExtension> {
+        kotlin {
+            ktlint()
+        }
+        kotlinGradle {
+            target("*.gradle.kts")
+            ktlint()
         }
     }
-}
 
-// Task to run both app and frontend builds
-tasks.register("buildAll") {
-    group = "build"
-    description = "Build both app and frontend"
-    dependsOn(":app:build", ":frontend:buildFrontend")
-}
-
-// Task to run all tests
-tasks.register("testAll") {
-    group = "verification"
-    description = "Run all tests for app and frontend"
-    dependsOn(":app:test", ":frontend:testFrontend")
 }
 
 // Task to start both app and frontend in development
